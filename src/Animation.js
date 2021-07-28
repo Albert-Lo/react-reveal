@@ -18,9 +18,6 @@ const
   },
   defaultProps = {
 
-  },
-  childContextTypes = {
-    stepper: object,
   };
 
 class Animation extends React.Component {
@@ -28,10 +25,6 @@ class Animation extends React.Component {
   constructor(props) {
     super(props);
     this.stepper = props.steps;
-  }
-
-  getChildContext() {
-    return { stepper: this.stepper };
   }
 
   static step(...args) {
@@ -47,5 +40,4 @@ class Animation extends React.Component {
 
 Animation.propTypes = propTypes;
 Animation.defaultProps = defaultProps;
-Animation.childContextTypes = childContextTypes;
 export default Animation;

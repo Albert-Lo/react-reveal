@@ -1,5 +1,5 @@
 {
-  "name": "react-reveal",
+  "name": "@albertlo/react-reveal",
   "version": "1.2.2",
   "author": "Roman Nosov <rnosov@gmail.com>",
   "description": "Really simple way to add reveal on scroll animation to your React app.",
@@ -23,7 +23,7 @@
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
-    "react": "^15.3.0 || ^16.0.0"
+    "react": "^15.3.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",

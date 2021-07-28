@@ -61,31 +61,15 @@ const
     //when: true,
     refProp: 'ref',
     //margin: 0,
-  },
-  //,
-  //contextTypes = {
-  //  stepper: object,
-  //};
-
-  contextTypes = {
-    transitionGroup: object,
   };
-
-  //childContextTypes = {
-  //  transitionGroup: ()=>{},
-  //};
 
 class RevealBase extends React.Component {
 
-  //getChildContext() {
-  //  return { transitionGroup: null }; // allows for nested Transitions
-  //}
-
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.isOn = props.when !== undefined ? !!props.when : true;
     this.state = {
-      collapse: props.collapse //&& (props.appear || (context.transitionGroup&&!context.transitionGroup.isMounting))
+      collapse: props.collapse
        ? RevealBase.getInitialCollapseStyle(props)
        : void 0,
       style: {
@@ -303,8 +287,7 @@ class RevealBase extends React.Component {
       if (this.props.when !== undefined && this.props.outEffect && 'make' in this.props.outEffect)
         this.props.outEffect.make(true, this.props);
     }
-    const parentGroup = this.context.transitionGroup;
-    const appear = parentGroup && !parentGroup.isMounting ? !('enter' in this.props && this.props.enter === false) : this.props.appear;
+    const appear = this.props.appear;
     if (this.isOn && (((this.props.when !== undefined || this.props.spy !== undefined) && !appear)
     || (ssr && !fadeOutEnabled && !this.props.ssrFadeout && this.props.outEffect && !this.props.ssrReveal && (RevealBase.getTop(this.el) < window.pageYOffset + window.innerHeight)))
       ) {
@@ -370,7 +353,7 @@ class RevealBase extends React.Component {
     };
   }
 
-  componentWillReceiveProps (props) {
+  componentDidUpdate (props) {
     if (props.when !== undefined)
       this.isOn = !!props.when;
     if (props.fraction !== this.props.fraction)
@@ -516,7 +499,5 @@ class RevealBase extends React.Component {
 
 RevealBase.propTypes = propTypes;
 RevealBase.defaultProps = defaultProps;
-RevealBase.contextTypes = contextTypes;
 RevealBase.displayName = 'RevealBase';
-//RevealBase.childContextTypes = childContextTypes;
 export default RevealBase;

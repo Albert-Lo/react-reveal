@@ -165,6 +165,7 @@ git clone https://github.com/rnosov/react-reveal.git
 In the cloned directory, you can run following commands:
 
 ```sh
+nvm use
 npm install
 ```
 
