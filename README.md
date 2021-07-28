@@ -1,3 +1,8 @@
+# Disclaimer:
+**This is a fork of rnosov/react-reveal to get rid of the errors and warning in React 17** .  
+**I do not know what I am doing, use this at your own risk** .  
+**Please do not try to make PR, I'm not trying to maintain this, I just want to get rid of the warnings :'(** 
+
 # React Reveal
 
 [React Reveal](https://www.react-reveal.com/) is
@@ -32,13 +37,13 @@ For a full documentation please visit [online docs](https://www.react-reveal.com
 In the command prompt run:
 
 ```sh
-npm install react-reveal --save
+npm install @albertlo/react-reveal --save
 ```
 
 Alternatively you may use `yarn`:
 
 ```sh
-yarn add react-reveal
+yarn add @albertlo/react-reveal
 ```
 
 ## Quick Start

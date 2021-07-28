@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rnosov/react-reveal"
+    "url": "git+https://github.com/Albert-Lo/react-reveal.git"
   },
   "bugs": {
     "url": "https://github.com/rnosov/react-reveal/issues"
